@@ -420,13 +420,115 @@ a {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
     .top-header .introduction .top-logo span {
-      font-size: 1.6rem; }
+      display: block;
+      margin: 6px auto;
+      font-size: 1.6rem;
+      text-align: center;
+      color: #111;
+      width: 160px;
+      height: 18px;
+      background: url("../images/bg_release.gif") center/contain no-repeat; }
     .top-header .introduction .top-logo .brandlogo {
       text-indent: 100%;
+      white-space: nowrap;
       overflow: hidden;
-      background: url("../images/"); }
+      width: 336px;
+      height: 27px;
+      background: url("../images/logo.png") center/contain no-repeat; }
+    .top-header .introduction .guides {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin-left: 45px; }
+      .top-header .introduction .guides .guide1,
+      .top-header .introduction .guides .guide2 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex; }
+      .top-header .introduction .guides .guide1 {
+        font-size: 1.2rem; }
+        .top-header .introduction .guides .guide1 .questions,
+        .top-header .introduction .guides .guide1 .twitter {
+          position: relative;
+          color: #333;
+          line-height: 1.5;
+          margin: 15px;
+          padding-left: 26px; }
+          .top-header .introduction .guides .guide1 .questions a,
+          .top-header .introduction .guides .guide1 .twitter a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; }
+        .top-header .introduction .guides .guide1 .questions:hover,
+        .top-header .introduction .guides .guide1 .twitter:hover {
+          text-decoration: underline; }
+        .top-header .introduction .guides .guide1 .questions:before,
+        .top-header .introduction .guides .guide1 .twitter:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: "";
+          display: inline-block;
+          background: url("../images/icon_s_tw.gif") center/cover no-repeat;
+          width: 1.8rem;
+          height: 1.8rem; }
+        .top-header .introduction .guides .guide1 .questions:before {
+          background: url("../images/icon_s_pen.gif") center/cover no-repeat; }
+      .top-header .introduction .guides .guide2 {
+        font-size: 1.4rem;
+        -webkit-box-pack: end;
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end; }
+        .top-header .introduction .guides .guide2 .searchbox span {
+          position: relative;
+          width: 162px;
+          padding: 12px;
+          background: #007ae1;
+          color: #fff;
+          border-radius: 3px; }
+        .top-header .introduction .guides .guide2 .searchbox span:after {
+          content: "";
+          display: block;
+          background: #007ae1;
+          border-radius: 0;
+          position: absolute;
+          top: 45%;
+          right: -3px;
+          width: 0.6rem;
+          height: 0.6rem;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg); }
+        .top-header .introduction .guides .guide2 .searchbox form,
+        .top-header .introduction .guides .guide2 .searchbox input {
+          display: block;
+          border: none;
+          height: 40px; }
+        .top-header .introduction .guides .guide2 .searchbox .input-area {
+          width: 300px;
+          background: #f1f3f6;
+          color: #666;
+          border-radius: 3px; }
+        .top-header .introduction .guides .guide2 .searchbox .submit-btn {
+          width: 40px;
+          background: #007ae1;
+          color: #fff; }
   .top-header .gloval-nav {
     display: -webkit-box;
     display: -webkit-flex;
