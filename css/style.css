@@ -611,15 +611,66 @@ ul {
 a {
   text-decoration: none; }
 
+.gloval-nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px auto 0;
+  max-width: 1000px; }
+  .gloval-nav li {
+    width: 170px;
+    text-align: center; }
+    .gloval-nav li a {
+      color: #333; }
+      .gloval-nav li a div {
+        border-right: 1px solid #ddd;
+        position: relative;
+        height: 67px; }
+        .gloval-nav li a div img {
+          position: absolute;
+          left: 30%;
+          -webkit-transition: all 0.5s;
+          -o-transition: all 0.5s;
+          transition: all 0.5s; }
+      .gloval-nav li a span {
+        position: relative;
+        display: block;
+        font-size: 15px;
+        padding-top: 14px; }
+      .gloval-nav li a span:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 40%;
+        top: 0;
+        background: #ddd;
+        width: 32px;
+        height: 6px;
+        border-radius: 50%;
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s; }
+    .gloval-nav li a:hover div img {
+      margin-top: -20px;
+      margin-bottom: 20px; }
+    .gloval-nav li a:hover span:before {
+      width: 16px;
+      height: 4px;
+      left: 45%;
+      background: #f6f6f6; }
+  .gloval-nav li:first-child div {
+    border-left: 1px solid #ddd; }
+
 /*base▲
   =====================================================================*/
 /*ヘッダー▼
 	 =====================================================================*/
-.top-header {
+#top-header {
   max-width: 1000px;
   margin: auto;
   padding-bottom: 30px; }
-  .top-header .introduction {
+  #top-header .introduction {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -628,7 +679,7 @@ a {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between; }
-    .top-header .introduction .top-logo span {
+    #top-header .introduction .top-logo span {
       display: block;
       margin: 6px auto;
       font-size: 1.6rem;
@@ -637,14 +688,14 @@ a {
       width: 160px;
       height: 18px;
       background: url("../images/bg_release.gif") center/contain no-repeat; }
-    .top-header .introduction .top-logo .brandlogo {
+    #top-header .introduction .top-logo .brandlogo {
       text-indent: 100%;
       white-space: nowrap;
       overflow: hidden;
       width: 336px;
       height: 27px;
       background: url("../images/logo.png") center/contain no-repeat; }
-    .top-header .introduction .guides {
+    #top-header .introduction .guides {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -656,37 +707,37 @@ a {
       flex-direction: column;
       margin-left: 45px;
       width: 666px; }
-      .top-header .introduction .guides .guide1,
-      .top-header .introduction .guides .guide2 {
+      #top-header .introduction .guides .guide1,
+      #top-header .introduction .guides .guide2 {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex; }
-      .top-header .introduction .guides .guide1 {
+      #top-header .introduction .guides .guide1 {
         font-size: 1.2rem;
         -webkit-box-pack: end;
         -webkit-justify-content: flex-end;
         -ms-flex-pack: end;
         justify-content: flex-end; }
-        .top-header .introduction .guides .guide1 .questions,
-        .top-header .introduction .guides .guide1 .twitter {
+        #top-header .introduction .guides .guide1 .questions,
+        #top-header .introduction .guides .guide1 .twitter {
           position: relative;
           color: #333;
           line-height: 1.5;
           margin: 15px;
           padding-left: 26px; }
-          .top-header .introduction .guides .guide1 .questions a,
-          .top-header .introduction .guides .guide1 .twitter a {
+          #top-header .introduction .guides .guide1 .questions a,
+          #top-header .introduction .guides .guide1 .twitter a {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%; }
-        .top-header .introduction .guides .guide1 .questions:hover,
-        .top-header .introduction .guides .guide1 .twitter:hover {
+        #top-header .introduction .guides .guide1 .questions:hover,
+        #top-header .introduction .guides .guide1 .twitter:hover {
           text-decoration: underline; }
-        .top-header .introduction .guides .guide1 .questions:before,
-        .top-header .introduction .guides .guide1 .twitter:before {
+        #top-header .introduction .guides .guide1 .questions:before,
+        #top-header .introduction .guides .guide1 .twitter:before {
           position: absolute;
           top: 0;
           left: 0;
@@ -695,15 +746,15 @@ a {
           background: url("../images/icon_s_tw.gif") center/cover no-repeat;
           width: 1.8rem;
           height: 1.8rem; }
-        .top-header .introduction .guides .guide1 .questions:before {
+        #top-header .introduction .guides .guide1 .questions:before {
           background: url("../images/icon_s_pen.gif") center/cover no-repeat; }
-      .top-header .introduction .guides .guide2 {
+      #top-header .introduction .guides .guide2 {
         font-size: 1.4rem;
         -webkit-box-pack: justify;
         -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
         justify-content: space-between; }
-        .top-header .introduction .guides .guide2 .searchbox {
+        #top-header .introduction .guides .guide2 .searchbox {
           width: 520px;
           display: -webkit-box;
           display: -webkit-flex;
@@ -713,7 +764,7 @@ a {
           -webkit-justify-content: space-between;
           -ms-flex-pack: justify;
           justify-content: space-between; }
-          .top-header .introduction .guides .guide2 .searchbox span {
+          #top-header .introduction .guides .guide2 .searchbox span {
             position: relative;
             text-align: center;
             width: 162px;
@@ -722,7 +773,7 @@ a {
             background: #007ae1;
             color: #fff;
             border-radius: 3px; }
-          .top-header .introduction .guides .guide2 .searchbox span:after {
+          #top-header .introduction .guides .guide2 .searchbox span:after {
             content: "";
             display: block;
             background: #007ae1;
@@ -735,129 +786,225 @@ a {
             -webkit-transform: rotate(45deg);
             -ms-transform: rotate(45deg);
             transform: rotate(45deg); }
-          .top-header .introduction .guides .guide2 .searchbox form,
-          .top-header .introduction .guides .guide2 .searchbox input {
+          #top-header .introduction .guides .guide2 .searchbox form,
+          #top-header .introduction .guides .guide2 .searchbox input {
             border: none;
             height: 40px; }
-          .top-header .introduction .guides .guide2 .searchbox form {
+          #top-header .introduction .guides .guide2 .searchbox form {
             width: 345px; }
-          .top-header .introduction .guides .guide2 .searchbox .input-area {
+          #top-header .introduction .guides .guide2 .searchbox .input-area {
             width: 300px;
             background: #f1f3f6;
             color: #666;
             border-radius: 3px; }
-          .top-header .introduction .guides .guide2 .searchbox .submit-btn {
+          #top-header .introduction .guides .guide2 .searchbox .submit-btn {
             width: 40px;
             background: #007ae1;
             color: #fff;
             border-radius: 3px; }
-        .top-header .introduction .guides .guide2 .share-btn {
+        #top-header .introduction .guides .guide2 .share-btn {
           font-size: 0; }
-          .top-header .introduction .guides .guide2 .share-btn img {
+          #top-header .introduction .guides .guide2 .share-btn img {
             display: inline-block; }
-  .top-header .gloval-nav {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin-top: 20px; }
-    .top-header .gloval-nav li {
-      width: 170px;
-      text-align: center; }
-      .top-header .gloval-nav li a {
-        color: #333; }
-        .top-header .gloval-nav li a div {
-          border-right: 1px solid #ddd;
-          position: relative;
-          height: 67px; }
-          .top-header .gloval-nav li a div img {
-            position: absolute;
-            left: 30%;
-            -webkit-transition: all 0.5s;
-            -o-transition: all 0.5s;
-            transition: all 0.5s; }
-        .top-header .gloval-nav li a span {
-          position: relative;
-          display: block;
-          font-size: 15px;
-          padding-top: 14px; }
-        .top-header .gloval-nav li a span:before {
-          content: "";
-          display: block;
-          position: absolute;
-          left: 40%;
-          top: 0;
-          background: #ddd;
-          width: 32px;
-          height: 6px;
-          border-radius: 50%;
-          -webkit-transition: all 0.5s;
-          -o-transition: all 0.5s;
-          transition: all 0.5s; }
-      .top-header .gloval-nav li a:hover div img {
-        margin-top: -20px;
-        margin-bottom: 20px; }
-      .top-header .gloval-nav li a:hover span:before {
-        width: 16px;
-        height: 4px;
-        left: 45%;
-        background: #f6f6f6; }
-    .top-header .gloval-nav li:first-child div {
-      border-left: 1px solid #ddd; }
 
 /*ヘッダー▲
 	  =====================================================================*/
 /*メイン▼
 		 =====================================================================*/
-.hotnews {
-  background: #f1f3f6;
-  padding: 20px 0 0;
-  -webkit-box-shadow: 1px 2px rgba(0, 0, 0, 0.1) inset;
-  box-shadow: 1px 2px rgba(0, 0, 0, 0.1) inset; }
-  .hotnews .slick-dots {
+#top-page {
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  #top-page .hotnews {
     background: #f1f3f6;
-    height: 120px; }
-  .hotnews .news-contents {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    background: #fff;
-    padding: 20px 0;
-    font-size: 14px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-    .hotnews .news-contents h2 {
-      width: 242px;
-      height: 40px;
-      background: url("../images/bg_news.gif") center/contain no-repeat;
-      color: #fff;
-      padding: 14px 0 0 54px;
-      font-weight: normal;
-      font-size: 14px; }
-    .hotnews .news-contents ul {
-      margin-left: 40px; }
-      .hotnews .news-contents ul span {
-        line-height: 1.8; }
-        .hotnews .news-contents ul span a {
-          color: #006ed5; }
-        .hotnews .news-contents ul span a:hover {
-          text-decoration: underline; }
-      .hotnews .news-contents ul .date {
-        margin-right: 14px; }
-
-.new-books {
-  padding-top: 40px; }
-  .new-books h2 {
-    font-size: 24px;
-    text-align: center; }
+    padding: 20px 0 0;
+    -webkit-box-shadow: 1px 2px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 1px 2px rgba(0, 0, 0, 0.1) inset; }
+    #top-page .hotnews .slick-dots {
+      background: #f1f3f6;
+      height: 120px; }
+    #top-page .hotnews .news-contents {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      background: #fff;
+      padding: 20px 0;
+      font-size: 14px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      #top-page .hotnews .news-contents h2 {
+        width: 242px;
+        height: 40px;
+        background: url("../images/bg_news.gif") center/contain no-repeat;
+        color: #fff;
+        padding: 14px 0 0 54px;
+        font-weight: normal;
+        font-size: 14px; }
+      #top-page .hotnews .news-contents ul {
+        margin-left: 40px; }
+        #top-page .hotnews .news-contents ul span {
+          line-height: 1.8; }
+          #top-page .hotnews .news-contents ul span a {
+            color: #006ed5; }
+          #top-page .hotnews .news-contents ul span a:hover {
+            text-decoration: underline; }
+        #top-page .hotnews .news-contents ul .date {
+          margin-right: 14px; }
+  #top-page .new-books,
+  #top-page .new-sakidori {
+    padding-top: 40px; }
+    #top-page .new-books h2,
+    #top-page .new-sakidori h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 70px; }
+    #top-page .new-books .wrap,
+    #top-page .new-sakidori .wrap {
+      width: 100%;
+      background: url("../images/bg_book.gif");
+      padding-top: 60px; }
+      #top-page .new-books .wrap ul,
+      #top-page .new-sakidori .wrap ul {
+        width: 1000px;
+        margin: auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+        #top-page .new-books .wrap ul li,
+        #top-page .new-sakidori .wrap ul li {
+          width: 235px;
+          margin: 0 20px 40px 0; }
+          #top-page .new-books .wrap ul li:nth-child(4n),
+          #top-page .new-sakidori .wrap ul li:nth-child(4n) {
+            margin-right: 0; }
+          #top-page .new-books .wrap ul li img,
+          #top-page .new-sakidori .wrap ul li img {
+            width: 100%; }
+          #top-page .new-books .wrap ul li > div,
+          #top-page .new-sakidori .wrap ul li > div {
+            background: #fff;
+            height: 225px;
+            padding: 20px;
+            margin-top: 10px;
+            border: 1px solid #a0d6fa; }
+            #top-page .new-books .wrap ul li > div h3,
+            #top-page .new-sakidori .wrap ul li > div h3 {
+              font-size: 15px;
+              line-height: 1.5;
+              margin: 0 0 5px; }
+              #top-page .new-books .wrap ul li > div h3 a,
+              #top-page .new-sakidori .wrap ul li > div h3 a {
+                color: #006ed5; }
+                #top-page .new-books .wrap ul li > div h3 a:hover,
+                #top-page .new-sakidori .wrap ul li > div h3 a:hover {
+                  text-decoration: underline; }
+            #top-page .new-books .wrap ul li > div span,
+            #top-page .new-sakidori .wrap ul li > div span {
+              font-weight: bold;
+              font-size: 13px; }
+            #top-page .new-books .wrap ul li > div p,
+            #top-page .new-sakidori .wrap ul li > div p {
+              font-size: 13px;
+              line-height: 1.5; }
+              #top-page .new-books .wrap ul li > div p + span,
+              #top-page .new-sakidori .wrap ul li > div p + span {
+                display: block;
+                font-size: 11px;
+                font-weight: normal;
+                margin-top: 14px; }
+                #top-page .new-books .wrap ul li > div p + span a,
+                #top-page .new-sakidori .wrap ul li > div p + span a {
+                  display: block;
+                  width: 194px;
+                  text-align: center;
+                  background: #0078da;
+                  color: #fff;
+                  border-radius: 3px;
+                  padding: 10px;
+                  border-bottom: 3px solid #0061b0;
+                  -webkit-transition: all 0.3s;
+                  -o-transition: all 0.3s;
+                  transition: all 0.3s; }
+                  #top-page .new-books .wrap ul li > div p + span a:hover,
+                  #top-page .new-sakidori .wrap ul li > div p + span a:hover {
+                    opacity: 0.8; }
+  #top-page .new-sakidori .wrap {
+    background: #f1f3f6;
+    background-image: none; }
+    #top-page .new-sakidori .wrap ul li {
+      width: 184px; }
+      #top-page .new-sakidori .wrap ul li:nth-child(4n) {
+        margin-right: 20px; }
+      #top-page .new-sakidori .wrap ul li:nth-child(5n) {
+        margin-right: 0; }
+      #top-page .new-sakidori .wrap ul li > div h3 {
+        font-size: 14px; }
+      #top-page .new-sakidori .wrap ul li > div span + span {
+        display: block;
+        width: 45px;
+        padding: 4px;
+        margin-top: 10px;
+        line-height: 1;
+        background: #f72854;
+        color: #fff;
+        font-size: 11px;
+        font-weight: normal;
+        text-align: center; }
+      #top-page .new-sakidori .wrap ul li > div p {
+        font-size: 12px; }
+  #top-page .tweet {
+    padding: 60px; }
+    #top-page .tweet h2 {
+      text-align: center;
+      font-size: 24px;
+      position: relative; }
+      #top-page .tweet h2:before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 42px;
+        height: 42px;
+        background: url("../images/icon_tw.png") center/contain no-repeat;
+        top: -10px;
+        left: 43%; }
 
 /*メイン▲
 		  =====================================================================*/
 /*フッター▼
 			 =====================================================================*/
+#bottom-footer {
+  max-width: 1000px;
+  margin: 30px auto; }
+  #bottom-footer .links,
+  #bottom-footer .footer2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 30px; }
+  #bottom-footer .footer-logo .brandlogo {
+    display: block;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 336px;
+    height: 27px;
+    background: url("../images/logo.png") center/contain no-repeat; }
+
 /*フッター▲
 			  =====================================================================*/
