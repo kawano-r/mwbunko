@@ -27,7 +27,7 @@
 					<div class="searchbox">
 						<span>気になる作品を検索！</span>
 						<form action="">
-							<input class="input-area" type="text" value="" placeholder="作品名・著者名を入力してください"><input class="submit-btn" type="submit">
+							<input type="text" value="" placeholder="作品名・著者名を入力してください"><input type="submit">
 						</form>
 					</div>
 					<div class="share-btn">
@@ -74,6 +74,14 @@
 				<li><a href="http://mwbunko.com/special/sp18"><img src="images/slide_04.jpg" alt="キネマ探偵カレイドミステリー"></a></li>
 				<li><a href="http://mwbunko.com/978-4-04-892994-3/"><img src="images/slide_05.jpg" alt="お隣さんは小さな魔法使い"></a></li>
 				<li><a href="http://mwbunko.com/special/sp22"><img src="images/slide_06.jpg" alt="作家 星奏なつめ特集"></a></li>
+			</ul>
+			<ul class="slider-nav">
+				<li><img src="images/slide_01.jpg" alt="博多豚骨ラーメンズ"></li>
+				<li><img src="images/slide_02.jpg" alt="今月の新刊ラインナップ"></li>
+				<li><img src="images/slide_03.jpg" alt="神様の御用人"></li>
+				<li><img src="images/slide_04.jpg" alt="キネマ探偵カレイドミステリー"></li>
+				<li><img src="images/slide_05.jpg" alt="お隣さんは小さな魔法使い"></li>
+				<li><img src="images/slide_06.jpg" alt="作家 星奏なつめ特集"></li>
 			</ul>
 			<div class="news-contents">
 				<h2>編集部発ホットニュース</h2>
@@ -216,7 +224,10 @@
 		</section>
 
 		<section class="tweet">
-			<h2>ツイッター情報</h2>
+			<h2><span>ツイッター情報</span></h2>
+			<div class="timeline">
+			<a class="twitter-timeline" data-chrome="noheader nofooter" href="https://twitter.com/mwbunko">Tweets by mwbunko</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
 		</section>
 
 		<ul class="gloval-nav">
@@ -252,9 +263,15 @@
 			$('.slider').slick({
 				arrows: false,
 				autoplay: true,
-				dots: true,
 				centerMode: true,
-				centerPadding: '370px',
+				centerPadding: '17%',
+				asNavFor: 'slider-nav'
+			});
+			$('.slider-nav').slick({
+				slidesToShow: 6,
+				slidesToScroll: 1,
+				asNavFor: '.slider',
+				focusOnSelect: true
 			});
 		</script>
 
@@ -274,10 +291,14 @@
 				<p>当ホームページに掲載の、写真、動画などの無断転載、加工など一切禁止しております。</p>
 			</div>
 			<ul>
-				<li><img src="" alt="JASRAC許諾番号"></li>
-				<li><a href="https://minmoji.ucda.jp/"><img src="" alt="みんなの文字"></a></li>
+				<li><img src="images/jasrac.gif" alt="JASRAC許諾番号"></li>
+				<li><a href="https://minmoji.ucda.jp/"><img src="images/mwbunko.com_.png" alt="みんなの文字"></a></li>
 			</ul>
 		</div>
+		<a class="totop" href="#top">
+			<span>ページの<br>先頭へ</span>
+			<img src="images/pagetop.png" alt="ページの先頭へ">
+		</a>
 	</footer>
 
 </body>
