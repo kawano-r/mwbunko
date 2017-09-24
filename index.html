@@ -265,11 +265,12 @@
 				autoplay: true,
 				centerMode: true,
 				centerPadding: '17%',
-				asNavFor: 'slider-nav'
+				asNavFor: '.slider-nav'
 			});
 			$('.slider-nav').slick({
+				arrows: false,
+				autoplay: true,
 				slidesToShow: 6,
-				slidesToScroll: 1,
 				asNavFor: '.slider',
 				focusOnSelect: true
 			});

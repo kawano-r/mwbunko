@@ -267,8 +267,28 @@ a {
 		.slider-nav{
 			max-width: 1000px;
 			margin: 20px auto 50px;
+			position: relative;
 			.slick-slide{
 				height: auto;
+			}
+			&:before{
+				position: absolute;
+				content: "";
+				display: block;
+				top: -20px;
+				left: 76px;
+				border: 10px solid transparent;
+				border-bottom: 10px solid #006ed5;
+			}
+			&:after{
+				position: absolute;
+				content: "";
+				display: block;
+				width: 145px;
+				height: 48px;
+				top: 0;
+				left: 8px;
+				border: 5px solid #006ed5;
 			}
 		}
 		.news-contents {
