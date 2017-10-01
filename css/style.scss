@@ -4,14 +4,27 @@
 @import "slick-theme";
 /*base▼
  =====================================================================*/
-* {
+$md: 1145px;
+$sm: 625px;
+
+@mixin bp($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+ * {
 	box-sizing: border-box;
 }
 
 html {
+	height: 100%;
 	font-size: 62.5%;
 }
-
+body{
+	font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3', 'メイリオ', Meiryo,sans-serif;
+	height: 100%;
+}
 ul {
 	list-style: none;
 	padding-left: 0;
@@ -20,7 +33,7 @@ ul {
 a {
 	text-decoration: none;
 }
-
+/* 上部&トップ下部ナビゲーション */
 .gloval-nav {
 	display: flex;
 	margin: 14px auto 0;
@@ -86,6 +99,9 @@ a {
 	li:first-child div {
 		border-left: 1px solid #ddd;
 	}
+	@include bp($md){
+		display: none;
+	}
 }
 /*base▲
   =====================================================================*/
@@ -95,11 +111,17 @@ a {
 	max-width: 1000px;
 	margin: auto;
 	padding-bottom: 30px;
+	@include bp($md){
+		padding-bottom: 2px;
+	}
 
 	.introduction {
 		display: flex;
 		justify-content: space-between;
-
+		@include bp($md){
+			display: block;
+		}
+/* ロゴ */
 		.top-logo {
 			span {
 				display: block;
@@ -110,6 +132,11 @@ a {
 				width: 160px;
 				height: 18px;
 				background: url("../images/bg_release.gif") center/contain no-repeat;
+				@include bp($md){
+					font-size: 1.3rem;
+					width: 134px;
+					height: 13px;
+				}
 			}
 
 			.brandlogo {
@@ -120,15 +147,86 @@ a {
 				width: 336px;
 				height: 27px;
 				background: url("../images/logo.png") center/contain no-repeat;
+				@include bp($md){
+					width: 242px;
+					height: 19px;
+				}
+			}
+			@include bp($md){
+				padding: 2px 0 10px;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+				margin-bottom: 1rem;
 			}
 		}
-
+/* sns,search */
+		.leftbtn-menu{
+			display: block;
+			width: 6rem;
+			text-align: center;
+			font-weight: bold;
+			color: #000;
+			border-right: 1px solid #ddd;
+			display: none;
+			@include bp($md){
+				display: block;
+				float: left;
+			}
+			span{
+				display: block;
+				margin: 0.2rem auto 0.6rem;
+				width: 2.5rem;
+				height: 0.2rem;
+				background: #000;
+			}
+			div{
+				margin-top: -2px;
+			}
+			&.clicked{
+				position: fixed;
+				top: 0;
+				left: 260px;
+				z-index: 9999;
+				border: 0;
+				span{
+					background: #fff;
+					transform: rotate(45deg);
+					margin-top: 30px;
+					&:nth-child(2){
+						display: none;
+					}
+					&:nth-child(3){
+						transform: rotate(-45deg);
+						margin-top: -8px;
+					}
+				}
+				>div{
+					display: none;
+				}
+				& ~ .nav-container{
+					width: 100%;
+				}
+				& ~ .guides .guide1{
+					display: block;
+				}
+				& ~ .guides .share-btn{
+					display: block;
+				}
+			}
+		}
 		.guides {
 			display: flex;
 			flex-direction: column;
 			margin-left: 45px;
 			width: 666px;
+			@include bp($md){
+				width: auto;
+			}
 
+			&:after{
+				content: "";
+				display: block;
+				clear: both;
+			}
 			.guide1,
 			.guide2 {
 				display: flex;
@@ -137,6 +235,20 @@ a {
 			.guide1 {
 				font-size: 1.2rem;
 				justify-content: flex-end;
+				@include bp($md){
+					display: none;
+					position: fixed;
+					width: 275px;
+					height: 1000px;
+					top: 455px;
+					left: 0;
+					background: #fff;
+					padding-left: 8px;
+					flex-direction: column;
+					justify-content: flex-start;
+					z-index: 9999;
+					overflow-y: hidden;
+				}
 
 				.questions,
 				.twitter {
@@ -185,6 +297,10 @@ a {
 					width: 520px;
 					display: flex;
 					justify-content: space-between;
+					@include bp($md){
+						width: 100%;
+						margin: 0 14px 10px;
+					}
 
 					span {
 						position: relative;
@@ -195,6 +311,9 @@ a {
 						background: #007ae1;
 						color: #fff;
 						border-radius: 3px;
+						@include bp($md){
+							display: none;
+						}
 					}
 
 					span:after {
@@ -214,10 +333,16 @@ a {
 					input {
 						border: none;
 						height: 40px;
+						@include bp($md){
+							height: 34px;
+						}
 					}
 
 					form {
 						width: 345px;
+						@include bp($md){
+							width: 100%;
+						}
 					}
 
 					input[type="text"] {
@@ -226,6 +351,12 @@ a {
 						background: #f1f3f6;
 						color: #666;
 						border-radius: 3px;
+						@include bp($md){
+							width: 95%;
+						}
+						@include bp($sm){
+							width: 85%;
+						}
 					}
 
 					input[type="submit"] {
@@ -233,22 +364,127 @@ a {
 						text-indent:  200%;
 						white-space: nowrap;
 						overflow: hidden;
-						background: #007ae1 url("../images/icon_search.jpg");
+						background: #007ae1 url("../images/icon_search.jpg") center/contain no-repeat;
 						color: #fff;
 						border-top-right-radius: 5px;
 						border-bottom-right-radius: 5px;
+						@include bp($md){
+							width: 5%;
+						}
+						@include bp($sm){
+							width: 15%;
+						}
+						@include bp($sm){
+							width: 15%;
+						}
 					}
 				}
 
 				.share-btn {
 					font-size: 0;
-
-					img {
+					a {
 						display: inline-block;
+					}
+					@include bp($md){
+						display: none;
+						position: fixed;
+						top: 360px;
+						left: 0;
+						width: 275px;
+						background: #fff;
+						padding: 30px 15px;
+						z-index: 9999;
+
+						a{
+							width: 50%;
+							height: 35px;
+							background: #47569d;
+							text-align: center;
+							img{
+								height: 100%;
+							}
+						}
+						a:last-child{
+							background: #55acee;
+						}
 					}
 				}
 			}
 		}
+	}
+}
+/* レスポンシブでのナビゲーション表示 */
+.nav-container{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	min-height: 100%;
+	background: rgba( 0, 0, 0, 0.6);
+	z-index: 9998;
+	transition: all 0.3s;
+}
+.header-gloval-nav{
+	@include bp($md){
+		display: none;
+		background: #fff;
+		padding-top: 25px;
+		position: fixed;
+		width: 275px;
+		top: -20px;
+		left: 0;
+		z-index: 9999;
+
+		li{
+			a{
+				display: flex;
+				justify-content: space-around;
+				width: 275px;
+				background: #fff;
+
+				div{
+					border: none;
+					width: 20%;
+					height: 60px;
+
+					img{
+						width: 24px;
+						margin-top: 16px;
+					}
+				}
+				span{
+					width: 70%;
+					text-align: left;
+					font-size: 1.4rem;
+					border-top: 1px solid #ddd;
+					padding-top: 20px;
+					&:before{
+						display: none;
+					}
+				}
+
+			&:first-child div{
+				border: none;
+			}
+			&:hover{
+				div {
+					img {
+						margin-top: 16px;
+						margin-bottom: auto;
+						}
+					}
+				}
+			}
+			&:last-child{
+				span{
+					border-bottom: 1px solid #ddd;
+				}
+			}
+		}
+	}
+	&.clicked{
+		display: block;
 	}
 }
 /*ヘッダー▲
@@ -258,16 +494,25 @@ a {
 #top-page {
 	padding-bottom: 30px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	@include bp($md){
+		padding-bottom: 0;
+	}
 
 	.hotnews {
 		background: #f1f3f6;
 		padding: 20px 0 0;
 		box-shadow: 1px 2px rgba(0, 0, 0, 0.1) inset;
-
+		@include bp($md){
+			padding-top: 8px;
+		}
+		/* slider */
 		.slider-nav{
 			max-width: 1000px;
 			margin: 20px auto 50px;
 			position: relative;
+			@include bp($md){
+				display: none;
+			}
 			.slick-slide{
 				height: auto;
 			}
@@ -291,54 +536,96 @@ a {
 				border: 5px solid #006ed5;
 			}
 		}
+		/* 編集部発ホットニュース */
 		.news-contents {
 			display: flex;
 			justify-content: center;
 			background: #fff;
-			padding: 20px 0;
+			padding-bottom: 10px;
 			font-size: 14px;
 			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			@include bp($md){
+				display: block;
+				padding: 30px 0 0;
+			}
 
 			h2 {
 				width: 242px;
 				height: 40px;
 				background: url("../images/bg_news.gif") center/contain no-repeat;
 				color: #fff;
-				padding: 14px 0 0 54px;
+				padding: 14px 0 0 28px;
 				font-weight: normal;
-				font-size: 14px;
+				font-size: 1.4rem;
+				text-align: center;
+				@include bp($md){
+					margin: auto;
+				}
 			}
 
 			ul {
 				margin-left: 40px;
-
-				span {
-					line-height: 1.8;
-
-					a {
-						color: #006ed5;
-					}
-
-					a:hover {
-						text-decoration: underline;
-					}
+				@include bp($md){
+					margin-left: 14px;
 				}
-
-				.date {
+				@include bp($sm){
 					margin-right: 14px;
+				}
+				li{
+					@include bp($md){
+						padding: 8px 0 14px;
+						border-bottom: 1px solid #ddd;
+						&:first-child{
+							padding-top: 0;
+						}
+						&:last-child{
+							border-bottom: none;
+						}
+					}
+					span {
+						line-height: 1.8;
+						@include bp($md){
+							display: block;
+							line-height: 1.6;
+						}
+
+						a {
+							color: #006ed5;
+						}
+
+						a:hover {
+							text-decoration: underline;
+						}
+					}
+
+					.date {
+						margin-right: 14px;
+					}
 				}
 			}
 		}
 	}
-
+/* 発売情報 */
 	.new-books,
 	.new-sakidori {
 		padding-top: 40px;
+		@include bp($md){
+			padding-top: 20px;
+		}
 
 		h2 {
-			font-size: 28px;
+			font-size: 2.8rem;
 			text-align: center;
 			margin-bottom: 70px;
+			@include bp($md){
+				font-size: 2.2rem;
+				margin-bottom: 45px;
+			}
+			@include bp($sm){
+				line-height: 1.5;
+				width: 240px;
+				margin: 20px auto 40px;
+			}
 		}
 
 		.wrap {
@@ -346,6 +633,9 @@ a {
 			background: url("../images/bg_book.gif");
 			padding-top: 60px;
 			position: relative;
+			@include bp($md){
+				padding-top: 40px;
+			}
 			&:before{
 				content: "";
 				display: block;
@@ -355,6 +645,15 @@ a {
 				position: absolute;
 				top: -70px;
 				right: 430px;
+				@include bp($md){
+					width: 76px;
+					height: 76px;
+					top: -45px;
+					right: 40px;
+				}
+				@include bp($sm){
+					right: 20px;
+				}
 			}
 
 			ul {
@@ -363,10 +662,24 @@ a {
 				display: flex;
 				justify-content: flex-start;
 				flex-wrap: wrap;
+				@include bp($md){
+					width: 92%;
+				}
 
 				li {
 					width: 235px;
 					margin: 0 20px 40px 0;
+					@include bp($md){
+						width: 22%;
+						margin: 0 28px 20px 0;
+					}
+					@include bp($sm){
+						width: 48%;
+						margin-right: 4%;
+						&:nth-child(2n) {
+							margin-right: 0;
+						}
+					}
 
 					&:nth-child(4n) {
 						margin-right: 0;
@@ -382,9 +695,16 @@ a {
 						padding: 20px;
 						margin-top: 10px;
 						border: 1px solid #a0d6fa;
+						@include bp($md){
+							padding: 12px;
+							height: 248px;
+						}
+						@include bp($sm){
+							height: 270px;
+						}
 
 						h3 {
-							font-size: 15px;
+							font-size: 1.5rem;
 							line-height: 1.5;
 							margin: 0 0 5px;
 
@@ -399,22 +719,25 @@ a {
 
 						span {
 							font-weight: bold;
-							font-size: 13px;
+							font-size: 1.3rem;
 						}
 
 						p {
-							font-size: 13px;
+							font-size: 1.3rem;
 							line-height: 1.5;
 
 							+ span {
 								display: block;
-								font-size: 11px;
+								font-size: 1.1rem;
 								font-weight: normal;
 								margin-top: 14px;
+								@include bp($md){
+									font-size: 1rem;
+								}
 
 								a {
 									display: block;
-									width: 194px;
+									width: 100%;
 									text-align: center;
 									background: #0078da;
 									color: #fff;
@@ -422,6 +745,9 @@ a {
 									padding: 10px;
 									border-bottom: 3px solid #0061b0;
 									transition: all 0.3s;
+									@include bp($sm){
+										padding: 10px 0;
+									}
 
 									&:hover {
 										opacity: 0.8;
@@ -446,17 +772,45 @@ a {
 				position: absolute;
 				top: -56px;
 				left: 430px;
+				@include bp($md){
+					width: 64px;
+					height: 64px;
+					top: -36px;
+					left: 43px;
+				}
+				@include bp($sm){
+					left: 23px;
+				}
 			}
 			ul {
 				li {
 					width: 184px;
+					@include bp($md){
+						width: 22%;
+					}
+					@include bp($sm){
+						width: 48%;
+
+						&:nth-child(2n){
+							margin-right: 0;
+						}
+					}
 
 					&:nth-child(4n) {
 						margin-right: 20px;
+						@include bp($md){
+							margin-right: 0;
+						}
 					}
 
 					&:nth-child(5n) {
 						margin-right: 0;
+						@include bp($md){
+							margin-right: 28px;
+						}
+						@include bp($sm){
+							margin-right: 4%;
+						}
 					}
 
 					> div {
@@ -487,20 +841,30 @@ a {
 			}
 		}
 	}
-
+/* ツイッター */
 	.tweet {
 		padding: 60px;
 		margin-bottom: 30px;
 		background: #d7efff;
+		@include bp($md){
+			padding: 20px 14px 30px;
+			margin-bottom: 0;
+		}
 
 		h2 {
 			text-align: center;
 			margin-bottom: 50px;
+			@include bp($md){
+				margin-bottom: 30px;
+			}
 			span{
 				display: inline-block;
 				margin: auto;
-				font-size: 25px;
+				font-size: 2.5rem;
 				position: relative;
+				@include bp($md){
+					font-size: 1.7rem;
+				}
 			&:before {
 				position: absolute;
 				content: "";
@@ -510,6 +874,12 @@ a {
 				background: url("../images/icon_tw.png") center/contain no-repeat;
 				top: -5px;
 				left: -50px;
+				@include bp($md){
+					width: 34px;
+					height: 34px;
+					top: -8px;
+					left: -50px;
+				}
 				}
 			}
 		}
@@ -518,6 +888,9 @@ a {
 			height: 300px;
 			overflow-y: scroll;
 			margin: auto;
+			@include bp($md){
+				width: 100%;
+			}
 		}
 	}
 }
@@ -530,14 +903,44 @@ a {
 #bottom-footer {
 	max-width: 1000px;
 	margin: 30px auto;
+	@include bp($md){
+		margin: 20px auto;
+	}
 	.links,
 	.footer2{
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 	}
+	.links{
+		@include bp($md){
+		justify-content: space-around;
+		}
+		@include bp($sm){
+			justify-content: space-between;
+			flex-wrap: wrap;
+			width: 90%;
+			margin: auto;
+		}
+		li{
+			width: 21.8%;
+			@include bp($sm){
+			width: 48.5%;
+			margin-bottom: 8px;
+			}
+			img{
+				width: 100%;
+			}
+		}
+	}
 	.footer2{
 		margin-bottom: 30px;
+		@include bp($md){
+			justify-content: center;
+			flex-direction: column;
+			text-align: center;
+			margin-bottom: 0;
+		}
 		.footer-logo {
 			.brandlogo {
 				display: block;
@@ -547,24 +950,43 @@ a {
 				width: 336px;
 				height: 27px;
 				background: url("../images/logo.png") center/contain no-repeat;
+				@include bp($md){
+					width: 222px;
+					height: 18px;
+					margin: 20px;
+				}
 			}
 		}
 		.copyright{
 			font-size: 1.2rem;
 			width: 290px;
 			margin: 0 100px 0 30px;
+			@include bp($md){
+				width: 280px;
+				font-size: 1.1rem;
+				margin: auto;
+			}
 
 			p{
 				margin: 0;
 				line-height: 1.5;
+				@include bp($md){
+					margin: 20px auto;
+				}
 			}
 		}
 		ul{
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			@include bp($md){
+				align-items: flex-start;
+			}
 			li:first-child{
 				margin-right: 30px;
+				@include bp($md){
+					margin-right: 10px;
+				}
 			}
 		}
 	}
@@ -580,6 +1002,33 @@ a {
 			color: #666;
 			line-height: 1.5;
 			margin-bottom: 1.2rem;
+		}
+		@include bp($md){
+			background: #0078da;
+			border: 2px solid #fff;
+			width: 54px;
+			height: 54px;
+			right: 20px;
+			bottom: 20px;
+			img,span{
+				display: none;
+			}
+			&:before,
+			&:after{
+				position: absolute;
+				content: "";
+				display: block;
+				background: #fff;
+				width: 1.1rem;
+				height: 0.15rem;
+				top: 47%;
+				left: 47%;
+				transform: rotate(45deg);
+			}
+			&:after{
+				left: 32%;
+				transform: rotate(-45deg);
+			}
 		}
 	}
 }
