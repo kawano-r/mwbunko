@@ -321,6 +321,17 @@
 			<span>ページの<br>先頭へ</span>
 			<img src="images/pagetop.png" alt="ページの先頭へ">
 		</a>
+		<script>
+		$(function(){
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > 100){
+					$('.totop').addClass('on');
+				} else {
+					$('.totop').removeClass('on');
+				}
+			});
+		});
+		</script>
 	</footer>
 
 </body>

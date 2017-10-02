@@ -25,7 +25,7 @@ body{
 	font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3', 'メイリオ', Meiryo,sans-serif;
 	height: 100%;
 }
-ul {
+ul,ol {
 	list-style: none;
 	padding-left: 0;
 }
@@ -990,11 +990,16 @@ a {
 			}
 		}
 	}
+	/* ページの先頭へ */
 	.totop{
+		display: block;
+		opacity: 0;
+		pointer-events: none;
 		text-align: center;
 		position: fixed;
 		right: 52px;
 		bottom: -22px;
+		transition: opacity 1s;
 		span{
 			display: block;
 			font-size: 1.2rem;
@@ -1029,6 +1034,10 @@ a {
 				left: 32%;
 				transform: rotate(-45deg);
 			}
+		}
+		&.on{
+			opacity: 1;
+			pointer-events: auto;
 		}
 	}
 }

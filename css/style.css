@@ -611,14 +611,10 @@ html {
   font-size: 62.5%; }
 
 body {
-<<<<<<< HEAD
-  font-family: minmoji; }
-=======
   font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3', 'メイリオ', Meiryo,sans-serif;
   height: 100%; }
->>>>>>> 1549223fef7e839483296b6533000c2a13bd83d2
 
-ul {
+ul, ol {
   list-style: none;
   padding-left: 0; }
 
@@ -1411,7 +1407,8 @@ a {
 			 =====================================================================*/
 #bottom-footer {
   max-width: 1000px;
-  margin: 30px auto; }
+  margin: 30px auto;
+  /* ページの先頭へ */ }
   @media screen and (max-width: 1145px) {
     #bottom-footer {
       margin: 20px auto; } }
@@ -1521,10 +1518,16 @@ a {
           #bottom-footer .footer2 ul li:first-child {
             margin-right: 10px; } }
   #bottom-footer .totop {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
     text-align: center;
     position: fixed;
     right: 52px;
-    bottom: -22px; }
+    bottom: -22px;
+    -webkit-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s; }
     #bottom-footer .totop span {
       display: block;
       font-size: 1.2rem;
@@ -1559,6 +1562,9 @@ a {
           -webkit-transform: rotate(-45deg);
           -ms-transform: rotate(-45deg);
           transform: rotate(-45deg); } }
+    #bottom-footer .totop.on {
+      opacity: 1;
+      pointer-events: auto; }
 
 /*フッター▲
 			  =====================================================================*/
