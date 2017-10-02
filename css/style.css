@@ -551,22 +551,20 @@ template {
 
 .slick-dots {
   position: absolute;
-  bottom: -135px;
   list-style: none;
   display: block;
   text-align: center;
   margin: auto;
   width: 100%;
   background: #f1f3f6;
-  height: 120px; }
+  padding: 5px 0 15px; }
   .slick-dots li {
     position: relative;
     display: inline-block;
     height: 20px;
     width: 20px;
     margin: 0 1px;
-    padding: 0;
-    cursor: pointer; }
+    padding: 0; }
     .slick-dots li button {
       border: 0;
       background: transparent;
@@ -587,19 +585,19 @@ template {
         position: absolute;
         top: 0;
         left: 0;
-        content: "•";
+        content: "●";
         width: 20px;
         height: 20px;
         font-family: "slick";
-        font-size: 28px;
+        font-size: 12px;
         line-height: 20px;
         text-align: center;
-        color: black;
+        color: #666;
         opacity: 0.25;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
     .slick-dots li.slick-active button:before {
-      color: black;
+      color: #0078da;
       opacity: 0.75; }
 
 /*base▼
@@ -609,10 +607,16 @@ template {
   box-sizing: border-box; }
 
 html {
+  height: 100%;
   font-size: 62.5%; }
 
 body {
+<<<<<<< HEAD
   font-family: minmoji; }
+=======
+  font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3', 'メイリオ', Meiryo,sans-serif;
+  height: 100%; }
+>>>>>>> 1549223fef7e839483296b6533000c2a13bd83d2
 
 ul {
   list-style: none;
@@ -621,6 +625,7 @@ ul {
 a {
   text-decoration: none; }
 
+/* 上部&トップ下部ナビゲーション */
 .gloval-nav {
   display: -webkit-box;
   display: -webkit-flex;
@@ -671,6 +676,9 @@ a {
       background: #f6f6f6; }
   .gloval-nav li:first-child div {
     border-left: 1px solid #ddd; }
+  @media screen and (max-width: 1145px) {
+    .gloval-nav {
+      display: none; } }
 
 /*base▲
   =====================================================================*/
@@ -680,6 +688,9 @@ a {
   max-width: 1000px;
   margin: auto;
   padding-bottom: 30px; }
+  @media screen and (max-width: 1145px) {
+    #top-header {
+      padding-bottom: 2px; } }
   #top-header .introduction {
     display: -webkit-box;
     display: -webkit-flex;
@@ -688,7 +699,12 @@ a {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
-    justify-content: space-between; }
+    justify-content: space-between;
+    /* ロゴ */
+    /* sns,search */ }
+    @media screen and (max-width: 1145px) {
+      #top-header .introduction {
+        display: block; } }
     #top-header .introduction .top-logo span {
       display: block;
       margin: 6px auto;
@@ -698,6 +714,11 @@ a {
       width: 160px;
       height: 18px;
       background: url("../images/bg_release.gif") center/contain no-repeat; }
+      @media screen and (max-width: 1145px) {
+        #top-header .introduction .top-logo span {
+          font-size: 1.3rem;
+          width: 134px;
+          height: 13px; } }
     #top-header .introduction .top-logo .brandlogo {
       margin: 10px auto;
       text-indent: 100%;
@@ -706,6 +727,62 @@ a {
       width: 336px;
       height: 27px;
       background: url("../images/logo.png") center/contain no-repeat; }
+      @media screen and (max-width: 1145px) {
+        #top-header .introduction .top-logo .brandlogo {
+          width: 242px;
+          height: 19px; } }
+    @media screen and (max-width: 1145px) {
+      #top-header .introduction .top-logo {
+        padding: 2px 0 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        margin-bottom: 1rem; } }
+    #top-header .introduction .leftbtn-menu {
+      display: block;
+      width: 6rem;
+      text-align: center;
+      font-weight: bold;
+      color: #000;
+      border-right: 1px solid #ddd;
+      display: none; }
+      @media screen and (max-width: 1145px) {
+        #top-header .introduction .leftbtn-menu {
+          display: block;
+          float: left; } }
+      #top-header .introduction .leftbtn-menu span {
+        display: block;
+        margin: 0.2rem auto 0.6rem;
+        width: 2.5rem;
+        height: 0.2rem;
+        background: #000; }
+      #top-header .introduction .leftbtn-menu div {
+        margin-top: -2px; }
+      #top-header .introduction .leftbtn-menu.clicked {
+        position: fixed;
+        top: 0;
+        left: 260px;
+        z-index: 9999;
+        border: 0; }
+        #top-header .introduction .leftbtn-menu.clicked span {
+          background: #fff;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+          margin-top: 30px; }
+          #top-header .introduction .leftbtn-menu.clicked span:nth-child(2) {
+            display: none; }
+          #top-header .introduction .leftbtn-menu.clicked span:nth-child(3) {
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            margin-top: -8px; }
+        #top-header .introduction .leftbtn-menu.clicked > div {
+          display: none; }
+        #top-header .introduction .leftbtn-menu.clicked ~ .nav-container {
+          width: 100%; }
+        #top-header .introduction .leftbtn-menu.clicked ~ .guides .guide1 {
+          display: block; }
+        #top-header .introduction .leftbtn-menu.clicked ~ .guides .share-btn {
+          display: block; }
     #top-header .introduction .guides {
       display: -webkit-box;
       display: -webkit-flex;
@@ -718,6 +795,13 @@ a {
       flex-direction: column;
       margin-left: 45px;
       width: 666px; }
+      @media screen and (max-width: 1145px) {
+        #top-header .introduction .guides {
+          width: auto; } }
+      #top-header .introduction .guides:after {
+        content: "";
+        display: block;
+        clear: both; }
       #top-header .introduction .guides .guide1,
       #top-header .introduction .guides .guide2 {
         display: -webkit-box;
@@ -730,6 +814,27 @@ a {
         -webkit-justify-content: flex-end;
         -ms-flex-pack: end;
         justify-content: flex-end; }
+        @media screen and (max-width: 1145px) {
+          #top-header .introduction .guides .guide1 {
+            display: none;
+            position: fixed;
+            width: 275px;
+            height: 1000px;
+            top: 455px;
+            left: 0;
+            background: #fff;
+            padding-left: 8px;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: start;
+            -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            z-index: 9999;
+            overflow-y: hidden; } }
         #top-header .introduction .guides .guide1 .questions,
         #top-header .introduction .guides .guide1 .twitter {
           position: relative;
@@ -775,6 +880,10 @@ a {
           -webkit-justify-content: space-between;
           -ms-flex-pack: justify;
           justify-content: space-between; }
+          @media screen and (max-width: 1145px) {
+            #top-header .introduction .guides .guide2 .searchbox {
+              width: 100%;
+              margin: 0 14px 10px; } }
           #top-header .introduction .guides .guide2 .searchbox span {
             position: relative;
             text-align: center;
@@ -784,6 +893,9 @@ a {
             background: #007ae1;
             color: #fff;
             border-radius: 3px; }
+            @media screen and (max-width: 1145px) {
+              #top-header .introduction .guides .guide2 .searchbox span {
+                display: none; } }
           #top-header .introduction .guides .guide2 .searchbox span:after {
             content: "";
             display: block;
@@ -801,27 +913,128 @@ a {
           #top-header .introduction .guides .guide2 .searchbox input {
             border: none;
             height: 40px; }
+            @media screen and (max-width: 1145px) {
+              #top-header .introduction .guides .guide2 .searchbox form,
+              #top-header .introduction .guides .guide2 .searchbox input {
+                height: 34px; } }
           #top-header .introduction .guides .guide2 .searchbox form {
             width: 345px; }
+            @media screen and (max-width: 1145px) {
+              #top-header .introduction .guides .guide2 .searchbox form {
+                width: 100%; } }
           #top-header .introduction .guides .guide2 .searchbox input[type="text"] {
             width: 300px;
             padding: 1rem;
             background: #f1f3f6;
             color: #666;
             border-radius: 3px; }
+            @media screen and (max-width: 1145px) {
+              #top-header .introduction .guides .guide2 .searchbox input[type="text"] {
+                width: 95%; } }
+            @media screen and (max-width: 625px) {
+              #top-header .introduction .guides .guide2 .searchbox input[type="text"] {
+                width: 85%; } }
           #top-header .introduction .guides .guide2 .searchbox input[type="submit"] {
             width: 42px;
             text-indent: 200%;
             white-space: nowrap;
             overflow: hidden;
-            background: #007ae1 url("../images/icon_search.jpg");
+            background: #007ae1 url("../images/icon_search.jpg") center/contain no-repeat;
             color: #fff;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px; }
+            @media screen and (max-width: 1145px) {
+              #top-header .introduction .guides .guide2 .searchbox input[type="submit"] {
+                width: 5%; } }
+            @media screen and (max-width: 625px) {
+              #top-header .introduction .guides .guide2 .searchbox input[type="submit"] {
+                width: 15%; } }
+            @media screen and (max-width: 625px) {
+              #top-header .introduction .guides .guide2 .searchbox input[type="submit"] {
+                width: 15%; } }
         #top-header .introduction .guides .guide2 .share-btn {
           font-size: 0; }
-          #top-header .introduction .guides .guide2 .share-btn img {
+          #top-header .introduction .guides .guide2 .share-btn a {
             display: inline-block; }
+          @media screen and (max-width: 1145px) {
+            #top-header .introduction .guides .guide2 .share-btn {
+              display: none;
+              position: fixed;
+              top: 360px;
+              left: 0;
+              width: 275px;
+              background: #fff;
+              padding: 30px 15px;
+              z-index: 9999; }
+              #top-header .introduction .guides .guide2 .share-btn a {
+                width: 50%;
+                height: 35px;
+                background: #47569d;
+                text-align: center; }
+                #top-header .introduction .guides .guide2 .share-btn a img {
+                  height: 100%; }
+              #top-header .introduction .guides .guide2 .share-btn a:last-child {
+                background: #55acee; } }
+
+/* レスポンシブでのナビゲーション表示 */
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  min-height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9998;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+@media screen and (max-width: 1145px) {
+  .header-gloval-nav {
+    display: none;
+    background: #fff;
+    padding-top: 25px;
+    position: fixed;
+    width: 275px;
+    top: -20px;
+    left: 0;
+    z-index: 9999; }
+    .header-gloval-nav li a {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      width: 275px;
+      background: #fff; }
+      .header-gloval-nav li a div {
+        border: none;
+        width: 20%;
+        height: 60px; }
+        .header-gloval-nav li a div img {
+          width: 24px;
+          margin-top: 16px; }
+      .header-gloval-nav li a span {
+        width: 70%;
+        text-align: left;
+        font-size: 1.4rem;
+        border-top: 1px solid #ddd;
+        padding-top: 20px; }
+        .header-gloval-nav li a span:before {
+          display: none; }
+      .header-gloval-nav li a:first-child div {
+        border: none; }
+      .header-gloval-nav li a:hover div img {
+        margin-top: 16px;
+        margin-bottom: auto; }
+    .header-gloval-nav li:last-child span {
+      border-bottom: 1px solid #ddd; } }
+
+.header-gloval-nav.clicked {
+  display: block; }
 
 /*ヘッダー▲
 	  =====================================================================*/
@@ -829,16 +1042,29 @@ a {
 		 =====================================================================*/
 #top-page {
   padding-bottom: 30px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  /* 発売情報 */
+  /* ツイッター */ }
+  @media screen and (max-width: 1145px) {
+    #top-page {
+      padding-bottom: 0; } }
   #top-page .hotnews {
     background: #f1f3f6;
     padding: 20px 0 0;
     -webkit-box-shadow: 1px 2px rgba(0, 0, 0, 0.1) inset;
-    box-shadow: 1px 2px rgba(0, 0, 0, 0.1) inset; }
+    box-shadow: 1px 2px rgba(0, 0, 0, 0.1) inset;
+    /* slider */
+    /* 編集部発ホットニュース */ }
+    @media screen and (max-width: 1145px) {
+      #top-page .hotnews {
+        padding-top: 8px; } }
     #top-page .hotnews .slider-nav {
       max-width: 1000px;
       margin: 20px auto 50px;
       position: relative; }
+      @media screen and (max-width: 1145px) {
+        #top-page .hotnews .slider-nav {
+          display: none; } }
       #top-page .hotnews .slider-nav .slick-slide {
         height: auto; }
       #top-page .hotnews .slider-nav:before {
@@ -868,41 +1094,86 @@ a {
       -ms-flex-pack: center;
       justify-content: center;
       background: #fff;
-      padding: 20px 0;
+      padding-bottom: 10px;
       font-size: 14px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      @media screen and (max-width: 1145px) {
+        #top-page .hotnews .news-contents {
+          display: block;
+          padding: 30px 0 0; } }
       #top-page .hotnews .news-contents h2 {
         width: 242px;
         height: 40px;
         background: url("../images/bg_news.gif") center/contain no-repeat;
         color: #fff;
-        padding: 14px 0 0 54px;
+        padding: 14px 0 0 28px;
         font-weight: normal;
-        font-size: 14px; }
+        font-size: 1.4rem;
+        text-align: center; }
+        @media screen and (max-width: 1145px) {
+          #top-page .hotnews .news-contents h2 {
+            margin: auto; } }
       #top-page .hotnews .news-contents ul {
         margin-left: 40px; }
-        #top-page .hotnews .news-contents ul span {
+        @media screen and (max-width: 1145px) {
+          #top-page .hotnews .news-contents ul {
+            margin-left: 14px; } }
+        @media screen and (max-width: 625px) {
+          #top-page .hotnews .news-contents ul {
+            margin-right: 14px; } }
+        @media screen and (max-width: 1145px) {
+          #top-page .hotnews .news-contents ul li {
+            padding: 8px 0 14px;
+            border-bottom: 1px solid #ddd; }
+            #top-page .hotnews .news-contents ul li:first-child {
+              padding-top: 0; }
+            #top-page .hotnews .news-contents ul li:last-child {
+              border-bottom: none; } }
+        #top-page .hotnews .news-contents ul li span {
           line-height: 1.8; }
-          #top-page .hotnews .news-contents ul span a {
+          @media screen and (max-width: 1145px) {
+            #top-page .hotnews .news-contents ul li span {
+              display: block;
+              line-height: 1.6; } }
+          #top-page .hotnews .news-contents ul li span a {
             color: #006ed5; }
-          #top-page .hotnews .news-contents ul span a:hover {
+          #top-page .hotnews .news-contents ul li span a:hover {
             text-decoration: underline; }
-        #top-page .hotnews .news-contents ul .date {
+        #top-page .hotnews .news-contents ul li .date {
           margin-right: 14px; }
   #top-page .new-books,
   #top-page .new-sakidori {
     padding-top: 40px; }
+    @media screen and (max-width: 1145px) {
+      #top-page .new-books,
+      #top-page .new-sakidori {
+        padding-top: 20px; } }
     #top-page .new-books h2,
     #top-page .new-sakidori h2 {
-      font-size: 28px;
+      font-size: 2.8rem;
       text-align: center;
       margin-bottom: 70px; }
+      @media screen and (max-width: 1145px) {
+        #top-page .new-books h2,
+        #top-page .new-sakidori h2 {
+          font-size: 2.2rem;
+          margin-bottom: 45px; } }
+      @media screen and (max-width: 625px) {
+        #top-page .new-books h2,
+        #top-page .new-sakidori h2 {
+          line-height: 1.5;
+          width: 240px;
+          margin: 20px auto 40px; } }
     #top-page .new-books .wrap,
     #top-page .new-sakidori .wrap {
       width: 100%;
       background: url("../images/bg_book.gif");
       padding-top: 60px;
       position: relative; }
+      @media screen and (max-width: 1145px) {
+        #top-page .new-books .wrap,
+        #top-page .new-sakidori .wrap {
+          padding-top: 40px; } }
       #top-page .new-books .wrap:before,
       #top-page .new-sakidori .wrap:before {
         content: "";
@@ -913,6 +1184,17 @@ a {
         position: absolute;
         top: -70px;
         right: 430px; }
+        @media screen and (max-width: 1145px) {
+          #top-page .new-books .wrap:before,
+          #top-page .new-sakidori .wrap:before {
+            width: 76px;
+            height: 76px;
+            top: -45px;
+            right: 40px; } }
+        @media screen and (max-width: 625px) {
+          #top-page .new-books .wrap:before,
+          #top-page .new-sakidori .wrap:before {
+            right: 20px; } }
       #top-page .new-books .wrap ul,
       #top-page .new-sakidori .wrap ul {
         width: 1000px;
@@ -928,10 +1210,27 @@ a {
         -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
+        @media screen and (max-width: 1145px) {
+          #top-page .new-books .wrap ul,
+          #top-page .new-sakidori .wrap ul {
+            width: 92%; } }
         #top-page .new-books .wrap ul li,
         #top-page .new-sakidori .wrap ul li {
           width: 235px;
           margin: 0 20px 40px 0; }
+          @media screen and (max-width: 1145px) {
+            #top-page .new-books .wrap ul li,
+            #top-page .new-sakidori .wrap ul li {
+              width: 22%;
+              margin: 0 28px 20px 0; } }
+          @media screen and (max-width: 625px) {
+            #top-page .new-books .wrap ul li,
+            #top-page .new-sakidori .wrap ul li {
+              width: 48%;
+              margin-right: 4%; }
+              #top-page .new-books .wrap ul li:nth-child(2n),
+              #top-page .new-sakidori .wrap ul li:nth-child(2n) {
+                margin-right: 0; } }
           #top-page .new-books .wrap ul li:nth-child(4n),
           #top-page .new-sakidori .wrap ul li:nth-child(4n) {
             margin-right: 0; }
@@ -945,9 +1244,18 @@ a {
             padding: 20px;
             margin-top: 10px;
             border: 1px solid #a0d6fa; }
+            @media screen and (max-width: 1145px) {
+              #top-page .new-books .wrap ul li > div,
+              #top-page .new-sakidori .wrap ul li > div {
+                padding: 12px;
+                height: 248px; } }
+            @media screen and (max-width: 625px) {
+              #top-page .new-books .wrap ul li > div,
+              #top-page .new-sakidori .wrap ul li > div {
+                height: 270px; } }
             #top-page .new-books .wrap ul li > div h3,
             #top-page .new-sakidori .wrap ul li > div h3 {
-              font-size: 15px;
+              font-size: 1.5rem;
               line-height: 1.5;
               margin: 0 0 5px; }
               #top-page .new-books .wrap ul li > div h3 a,
@@ -959,21 +1267,25 @@ a {
             #top-page .new-books .wrap ul li > div span,
             #top-page .new-sakidori .wrap ul li > div span {
               font-weight: bold;
-              font-size: 13px; }
+              font-size: 1.3rem; }
             #top-page .new-books .wrap ul li > div p,
             #top-page .new-sakidori .wrap ul li > div p {
-              font-size: 13px;
+              font-size: 1.3rem;
               line-height: 1.5; }
               #top-page .new-books .wrap ul li > div p + span,
               #top-page .new-sakidori .wrap ul li > div p + span {
                 display: block;
-                font-size: 11px;
+                font-size: 1.1rem;
                 font-weight: normal;
                 margin-top: 14px; }
+                @media screen and (max-width: 1145px) {
+                  #top-page .new-books .wrap ul li > div p + span,
+                  #top-page .new-sakidori .wrap ul li > div p + span {
+                    font-size: 1rem; } }
                 #top-page .new-books .wrap ul li > div p + span a,
                 #top-page .new-sakidori .wrap ul li > div p + span a {
                   display: block;
-                  width: 194px;
+                  width: 100%;
                   text-align: center;
                   background: #0078da;
                   color: #fff;
@@ -983,6 +1295,10 @@ a {
                   -webkit-transition: all 0.3s;
                   -o-transition: all 0.3s;
                   transition: all 0.3s; }
+                  @media screen and (max-width: 625px) {
+                    #top-page .new-books .wrap ul li > div p + span a,
+                    #top-page .new-sakidori .wrap ul li > div p + span a {
+                      padding: 10px 0; } }
                   #top-page .new-books .wrap ul li > div p + span a:hover,
                   #top-page .new-sakidori .wrap ul li > div p + span a:hover {
                     opacity: 0.8; }
@@ -996,12 +1312,38 @@ a {
       position: absolute;
       top: -56px;
       left: 430px; }
+      @media screen and (max-width: 1145px) {
+        #top-page .new-sakidori .wrap:before {
+          width: 64px;
+          height: 64px;
+          top: -36px;
+          left: 43px; } }
+      @media screen and (max-width: 625px) {
+        #top-page .new-sakidori .wrap:before {
+          left: 23px; } }
     #top-page .new-sakidori .wrap ul li {
       width: 184px; }
+      @media screen and (max-width: 1145px) {
+        #top-page .new-sakidori .wrap ul li {
+          width: 22%; } }
+      @media screen and (max-width: 625px) {
+        #top-page .new-sakidori .wrap ul li {
+          width: 48%; }
+          #top-page .new-sakidori .wrap ul li:nth-child(2n) {
+            margin-right: 0; } }
       #top-page .new-sakidori .wrap ul li:nth-child(4n) {
         margin-right: 20px; }
+        @media screen and (max-width: 1145px) {
+          #top-page .new-sakidori .wrap ul li:nth-child(4n) {
+            margin-right: 0; } }
       #top-page .new-sakidori .wrap ul li:nth-child(5n) {
         margin-right: 0; }
+        @media screen and (max-width: 1145px) {
+          #top-page .new-sakidori .wrap ul li:nth-child(5n) {
+            margin-right: 28px; } }
+        @media screen and (max-width: 625px) {
+          #top-page .new-sakidori .wrap ul li:nth-child(5n) {
+            margin-right: 4%; } }
       #top-page .new-sakidori .wrap ul li > div h3 {
         font-size: 14px; }
       #top-page .new-sakidori .wrap ul li > div span + span {
@@ -1021,14 +1363,24 @@ a {
     padding: 60px;
     margin-bottom: 30px;
     background: #d7efff; }
+    @media screen and (max-width: 1145px) {
+      #top-page .tweet {
+        padding: 20px 14px 30px;
+        margin-bottom: 0; } }
     #top-page .tweet h2 {
       text-align: center;
       margin-bottom: 50px; }
+      @media screen and (max-width: 1145px) {
+        #top-page .tweet h2 {
+          margin-bottom: 30px; } }
       #top-page .tweet h2 span {
         display: inline-block;
         margin: auto;
-        font-size: 25px;
+        font-size: 2.5rem;
         position: relative; }
+        @media screen and (max-width: 1145px) {
+          #top-page .tweet h2 span {
+            font-size: 1.7rem; } }
         #top-page .tweet h2 span:before {
           position: absolute;
           content: "";
@@ -1038,11 +1390,20 @@ a {
           background: url("../images/icon_tw.png") center/contain no-repeat;
           top: -5px;
           left: -50px; }
+          @media screen and (max-width: 1145px) {
+            #top-page .tweet h2 span:before {
+              width: 34px;
+              height: 34px;
+              top: -8px;
+              left: -50px; } }
     #top-page .tweet .timeline {
       width: 46%;
       height: 300px;
       overflow-y: scroll;
       margin: auto; }
+      @media screen and (max-width: 1145px) {
+        #top-page .tweet .timeline {
+          width: 100%; } }
 
 /*メイン▲
 		  =====================================================================*/
@@ -1051,6 +1412,9 @@ a {
 #bottom-footer {
   max-width: 1000px;
   margin: 30px auto; }
+  @media screen and (max-width: 1145px) {
+    #bottom-footer {
+      margin: 20px auto; } }
   #bottom-footer .links,
   #bottom-footer .footer2 {
     display: -webkit-box;
@@ -1065,8 +1429,45 @@ a {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center; }
+  @media screen and (max-width: 1145px) {
+    #bottom-footer .links {
+      -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+      justify-content: space-around; } }
+  @media screen and (max-width: 625px) {
+    #bottom-footer .links {
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      width: 90%;
+      margin: auto; } }
+  #bottom-footer .links li {
+    width: 21.8%; }
+    @media screen and (max-width: 625px) {
+      #bottom-footer .links li {
+        width: 48.5%;
+        margin-bottom: 8px; } }
+    #bottom-footer .links li img {
+      width: 100%; }
   #bottom-footer .footer2 {
     margin-bottom: 30px; }
+    @media screen and (max-width: 1145px) {
+      #bottom-footer .footer2 {
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 0; } }
     #bottom-footer .footer2 .footer-logo .brandlogo {
       display: block;
       text-indent: 100%;
@@ -1075,13 +1476,26 @@ a {
       width: 336px;
       height: 27px;
       background: url("../images/logo.png") center/contain no-repeat; }
+      @media screen and (max-width: 1145px) {
+        #bottom-footer .footer2 .footer-logo .brandlogo {
+          width: 222px;
+          height: 18px;
+          margin: 20px; } }
     #bottom-footer .footer2 .copyright {
       font-size: 1.2rem;
       width: 290px;
       margin: 0 100px 0 30px; }
+      @media screen and (max-width: 1145px) {
+        #bottom-footer .footer2 .copyright {
+          width: 280px;
+          font-size: 1.1rem;
+          margin: auto; } }
       #bottom-footer .footer2 .copyright p {
         margin: 0;
         line-height: 1.5; }
+        @media screen and (max-width: 1145px) {
+          #bottom-footer .footer2 .copyright p {
+            margin: 20px auto; } }
     #bottom-footer .footer2 ul {
       display: -webkit-box;
       display: -webkit-flex;
@@ -1095,8 +1509,17 @@ a {
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center; }
+      @media screen and (max-width: 1145px) {
+        #bottom-footer .footer2 ul {
+          -webkit-box-align: start;
+          -webkit-align-items: flex-start;
+          -ms-flex-align: start;
+          align-items: flex-start; } }
       #bottom-footer .footer2 ul li:first-child {
         margin-right: 30px; }
+        @media screen and (max-width: 1145px) {
+          #bottom-footer .footer2 ul li:first-child {
+            margin-right: 10px; } }
   #bottom-footer .totop {
     text-align: center;
     position: fixed;
@@ -1109,6 +1532,33 @@ a {
       color: #666;
       line-height: 1.5;
       margin-bottom: 1.2rem; }
+    @media screen and (max-width: 1145px) {
+      #bottom-footer .totop {
+        background: #0078da;
+        border: 2px solid #fff;
+        width: 54px;
+        height: 54px;
+        right: 20px;
+        bottom: 20px; }
+        #bottom-footer .totop img, #bottom-footer .totop span {
+          display: none; }
+        #bottom-footer .totop:before, #bottom-footer .totop:after {
+          position: absolute;
+          content: "";
+          display: block;
+          background: #fff;
+          width: 1.1rem;
+          height: 0.15rem;
+          top: 47%;
+          left: 47%;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg); }
+        #bottom-footer .totop:after {
+          left: 32%;
+          -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg); } }
 
 /*フッター▲
 			  =====================================================================*/

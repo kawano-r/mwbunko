@@ -18,6 +18,13 @@
 	<header id="top-header">
 		<div class="introduction">
 			<h1 class="top-logo"><a href="http://mwbunko.com/"><span>毎月25日発売</span><span class="brandlogo">メディアワークス文庫</span></a></h1>
+			<div class="leftbtn-menu">
+				<span></span>
+				<span></span>
+				<span></span>
+				<div>MENU</div>
+			</div>
+			<div class="nav-container"></div>
 			<div class="guides">
 				<div class="guide1">
 					<div class="twitter"><a href="https://twitter.com/mwbunko"></a>公式Twitterはこちら</div>
@@ -37,7 +44,7 @@
 				</div>
 			</div>
 		</div>
-		<ul class="gloval-nav">
+		<ul class="gloval-nav header-gloval-nav">
 			<li>
 				<a href="http://mwbunko.com/new">
 					<div><img src="images/icon_gnav_1.png" alt="新刊"></div><span>新　刊</span></a>
@@ -260,12 +267,26 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 		<script>
+		$('.leftbtn-menu').on('click', function(){
+			$(this).toggleClass('clicked');
+			$('.header-gloval-nav').toggleClass('clicked');
+		});
+
 			$('.slider').slick({
 				arrows: false,
 				autoplay: true,
 				centerMode: true,
 				centerPadding: '17%',
-				asNavFor: '.slider-nav'
+				asNavFor: '.slider-nav',
+				responsive: [
+					{
+						breakpoint: 1145,
+						settings: {
+							centerPadding: '0%',
+						dots: true
+					}
+				},
+			],
 			});
 			$('.slider-nav').slick({
 				arrows: false,
