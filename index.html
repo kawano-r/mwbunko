@@ -11,67 +11,18 @@
 	<meta name="author" content="">
 	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.ico">
 	<link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$("#header").load("header.html");
+			$("#footer").load("footer.html");
+		});
+	</script>
 </head>
 
 <body>
-	<header id="top-header">
-		<div class="introduction">
-			<h1 class="top-logo"><a href="http://mwbunko.com/"><span>毎月25日発売</span><span class="brandlogo">メディアワークス文庫</span></a></h1>
-			<div class="leftbtn-menu">
-				<span></span>
-				<span></span>
-				<span></span>
-				<div>MENU</div>
-			</div>
-			<div class="nav-container"></div>
-			<div class="guides">
-				<div class="guide1">
-					<div class="twitter"><a href="https://twitter.com/mwbunko"></a>公式Twitterはこちら</div>
-					<div class="questions"><a href="https://ssl.dengeki.com/mwbunko/"></a>読者アンケートにご協力ください</div>
-				</div>
-				<div class="guide2">
-					<div class="searchbox">
-						<span>気になる作品を検索！</span>
-						<form action="">
-							<input type="text" value="" placeholder="作品名・著者名を入力してください"><input type="submit">
-						</form>
-					</div>
-					<div class="share-btn">
-						<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmwbunko.com%2F&src=sdkpreparse"><img src="../images/icon_facebook.jpg" alt="facebook"></a>
-						<a href="https://twitter.com/share?url=http://mwbunko.com/&text=%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E6%96%87%E5%BA%AB%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88"><img src="../images/icon_twitter.jpg" alt="twitter"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<ul class="gloval-nav header-gloval-nav">
-			<li>
-				<a href="http://mwbunko.com/new">
-					<div><img src="images/icon_gnav_1.png" alt="新刊"></div><span>新　刊</span></a>
-			</li>
-			<li>
-				<a href="http://mwbunko.com/2017">
-					<div><img src="images/icon_gnav_2.png" alt="既刊"></div><span>既　刊</span></a>
-			</li>
-			<li>
-				<a href="http://mwbunko.com/?s=">
-					<div><img src="images/icon_gnav_3.png" alt="詳しく検索"></div><span>詳しく検索</span></a>
-			</li>
-			<li>
-				<a href="http://mwbunko.com/special">
-					<div><img src="images/icon_gnav_4.png" alt="作品特集"></div><span>作品特集</span></a>
-			</li>
-			<li>
-				<a href="http://mwbunko.com/novels">
-					<div><img src="images/icon_gnav_5.png" alt="読み物"></div><span>読み物</span></a>
-			</li>
-			<li>
-				<a href="http://mwbunko.com/cartoon">
-					<div><img src="images/icon_gnav_6.png" alt="8コマ漫画"></div><span>8コマ漫画</span></a>
-			</li>
-		</ul>
-	</header>
-
+	<div id="header"><!-- ヘッダー部分 --></div>
 	<main id="top-page">
 		<section class="hotnews">
 			<ul class="slider">
@@ -264,14 +215,8 @@
 			</li>
 		</ul>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 		<script>
-		$('.leftbtn-menu').on('click', function(){
-			$(this).toggleClass('clicked');
-			$('.header-gloval-nav').toggleClass('clicked');
-		});
-
 			$('.slider').slick({
 				arrows: false,
 				autoplay: true,
@@ -298,42 +243,7 @@
 		</script>
 
 	</main>
-
-	<footer id="bottom-footer">
-		<ul class="links">
-			<li><a href="http://25th.dengeki.com/"><img src="images/bnr_ftr_den25th.gif" alt="DENGEKI 25th"></a></li>
-			<li><a href="http://dengekibunko.dengeki.com/"><img src="images/bnr_ftr_dengeki.gif" alt="電撃文庫"></a></li>
-			<li><a href="http://bunko.maho.jp/"><img src="images/bnr_ftr_bunko.gif" alt="魔法のiらんど文庫"></a></li>
-			<li><a href="http://asciimw.jp/award/taisyo/"><img src="images/bnr_ftr_dtaisho.gif" alt="電撃大賞"></a></li>
-		</ul>
-		<div class="footer2">
-			<div class="footer-logo"><a href="http://mwbunko.com/"><span class="brandlogo">メディアワークス文庫</span></a></div>
-			<div class="copyright">
-				<span>&copy; KADOKAWA CORPORATION 2017</span>
-				<p>当ホームページに掲載の、写真、動画などの無断転載、加工など一切禁止しております。</p>
-			</div>
-			<ul>
-				<li><img src="images/jasrac.gif" alt="JASRAC許諾番号"></li>
-				<li><a href="https://minmoji.ucda.jp/"><img src="images/mwbunko.com_.png" alt="みんなの文字"></a></li>
-			</ul>
-		</div>
-		<a class="totop" href="#top">
-			<span>ページの<br>先頭へ</span>
-			<img src="images/pagetop.png" alt="ページの先頭へ">
-		</a>
-		<script>
-		$(function(){
-			$(window).scroll(function(){
-				if ($(this).scrollTop() > 100){
-					$('.totop').addClass('on');
-				} else {
-					$('.totop').removeClass('on');
-				}
-			});
-		});
-		</script>
-	</footer>
-
+	<div id="footer"><!-- フッター部分 --></div>
 </body>
 
 </html>

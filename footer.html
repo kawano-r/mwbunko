@@ -1,0 +1,34 @@
+<footer id="bottom-footer">
+	<ul class="links">
+		<li><a href="http://25th.dengeki.com/"><img src="images/bnr_ftr_den25th.gif" alt="DENGEKI 25th"></a></li>
+		<li><a href="http://dengekibunko.dengeki.com/"><img src="images/bnr_ftr_dengeki.gif" alt="電撃文庫"></a></li>
+		<li><a href="http://bunko.maho.jp/"><img src="images/bnr_ftr_bunko.gif" alt="魔法のiらんど文庫"></a></li>
+		<li><a href="http://asciimw.jp/award/taisyo/"><img src="images/bnr_ftr_dtaisho.gif" alt="電撃大賞"></a></li>
+	</ul>
+	<div class="footer2">
+		<div class="footer-logo"><a href="http://mwbunko.com/"><span class="brandlogo">メディアワークス文庫</span></a></div>
+		<div class="copyright">
+			<span>&copy; KADOKAWA CORPORATION 2017</span>
+			<p>当ホームページに掲載の、写真、動画などの無断転載、加工など一切禁止しております。</p>
+		</div>
+		<ul>
+			<li><img src="images/jasrac.gif" alt="JASRAC許諾番号"></li>
+			<li><a href="https://minmoji.ucda.jp/"><img src="images/mwbunko.com_.png" alt="みんなの文字"></a></li>
+		</ul>
+	</div>
+	<a class="totop" href="#top">
+		<span>ページの<br>先頭へ</span>
+		<img src="images/pagetop.png" alt="ページの先頭へ">
+	</a>
+	<script>
+	$(function(){
+		$(window).scroll(function(){
+			if ($(this).scrollTop() > 100){
+				$('.totop').addClass('on');
+			} else {
+				$('.totop').removeClass('on');
+			}
+		});
+	});
+	</script>
+</footer>
