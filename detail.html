@@ -44,7 +44,7 @@
 				<li><a href="http://mwbunko.com/tag/warm">ほんわか</a></li>
 				<li><a href="http://mwbunko.com/tag/happy">ハッピー</a></li>
 			</ul>
-			<div>
+			<div class="main-image">
 				<a href="http://mwbunko.com/books/978-4-04-893327-8/"><img src="images/detail/detail_main.jpg" alt=""></a>
 				<span>※試し読みページがある場合、表紙画像のクリックで表示します</span>
 			</div>
@@ -68,8 +68,8 @@
 				<p>
 					発売日　2017年8月25日<br>
 					定価　（本体630円＋税）<br>
-					ISBN　978-4-04-893327-8<br>
-					<span>書き下ろし</span>
+					ISBN　978-4-04-893327-8
+					<img src="images/detail/icon_kakioroshi.gif" alt="書き下ろし">
 				</p>
 				<h3>著者プロフィール</h3>
 				<p>第17回電撃小説大賞で《メディアワークス文庫賞》を受賞し『空をサカナが泳ぐ頃』でデビュー。他の著書に『山がわたしを呼んでいる！』などがある。 </p>
@@ -140,8 +140,6 @@
 							<p>第17回電撃小説大賞〈メディアワークス文庫賞〉受賞作 どんどん増えていく空のサカナ。いったい俺はどうなるの!? </p>
 						</div>
 					</li>
-					<li></li>
-					<li></li>
 				</ul>
 		</section>
 		<section class="lineup">
@@ -181,6 +179,14 @@
 				</ul>
 		</section>
 		<div class="more-search"><a href="http://mwbunko.com/tag/warm+happy+fantasy+wonder+painful+youth">同じジャンルの本を検索する</a></div>
+
+		<script src="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+		<script>
+			$('.lineup-slider').slick({
+				slidesToShow: 6,
+			});
+		</script>
+
 	</main>
 	<div id="footer"><!-- フッター部分 --></div>
 </body>
