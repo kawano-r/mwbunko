@@ -1,12 +1,12 @@
 @charset "UTF-8";
 @import "normalize";
 @import "common";
-
 /* ナビゲーション部分カレント表示 */
-.gloval-nav{
-	li:first-child{
+.gloval-nav {
+	li:first-child {
 		position: relative;
-		&:after{
+
+		&:after {
 			content: "";
 			position: absolute;
 			width: 100%;
@@ -23,47 +23,51 @@
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	box-shadow: 1px 2px rgba(0, 0, 0, 0.1) inset;
 	padding-top: 20px;
-
 	/* シェアボタン */
-	.share-btn{
+	.share-btn {
 		display: flex;
 		justify-content: flex-end;
 		max-width: 1000px;
 		margin: auto;
+		@include bp($md) {
+			justify-content: center;
+			margin: 13px auto 26px;
+		}
 
-		li{
+		li {
 			height: 20px;
 			margin-left: 5px;
 
-			a{
+			a {
 				display: table;
 				color: #fff;
 				padding: 2px 5px 2px 0;
 				border-radius: 3px;
 
 				img,
-				span{
+				span {
 					display: table-cell;
 					vertical-align: bottom;
 					padding-left: 3px;
 				}
 			}
 
-			&.btn-facebook{
-				a{
+			&.btn-facebook {
+				a {
 					background: #4267b2;
 					font-weight: bold;
 				}
 			}
-			&.btn-twitter{
-				a{
+
+			&.btn-twitter {
+				a {
 					background: #55acee;
 				}
 			}
 		}
 	}
 	/* 新刊情報　タイトル */
-	.page-title{
+	.page-title {
 		max-width: 1000px;
 		margin: 20px auto;
 		font-weight: normal;
@@ -72,71 +76,113 @@
 		line-height: 2.8;
 		position: relative;
 		padding-left: 58px;
+		@include bp($md) {
+			max-width: 97%;
+			line-height: 2.3;
+		}
+		@include bp($sm){
+			max-width: 90%;
+			padding-left: 52px;
+		}
 
-		img{
+		img {
 			position: absolute;
 			width: 28px;
 			top: 50%;
 			transform: translateY(-50%);
 			left: 12px;
+			@include bp($md) {
+				width: 26px;
+			}
+			@include bp($sm){
+				width: 24px;
+			}
 		}
 	}
-/* ラインナップ */
-	.lineup{
+	/* ラインナップ */
+	.lineup {
 		max-width: 1000px;
 		margin: 0 auto 60px;
+		@include bp($md) {
+			max-width: 97%;
+		}
+		@include bp($sm){
+			max-width: 90%;
+		}
 
-		h2{
+		h2 {
 			font-size: 1.6rem;
 			border-bottom: 3px solid #f1f3f6;
 			padding: 6px 0;
 		}
-		ul{
+
+		ul {
 			display: flex;
 			justify-content: space-between;
+			flex-wrap: wrap;
 			margin-top: 30px;
+			@include bp($md) {
+				justify-content: space-around;
+			}
 
-			li{
-				width: 118px;
+			li {
+				width: 14%;
+				padding-right: 20px;
 
-				img{
+				@include bp($md) {
+					width: 25%;
+					padding: 0 5%;
+				}
+				@include bp($sm){
+					width: 50%;
+					margin-bottom: 20px;
+				}
+
+				img {
 					width: 100%;
 				}
-				div{
-					span{
+
+				div {
+					span {
 						display: block;
 						margin: 1rem 0;
-						a{
+
+						a {
 							color: #f00;
 
-							&:hover{
+							&:hover {
 								text-decoration: underline;
 							}
 						}
 					}
 
-					h3{
+					h3 {
 						font-size: 1.4rem;
 						line-height: 1.5;
 						margin: 1rem 0;
 
-						a{
+						a {
 							color: #006ed5;
 
-							&:hover{
+							&:hover {
 								text-decoration: underline;
 							}
 						}
-						+span{
+
+						+span {
 							font-size: 1.4rem;
 							font-weight: bold;
 						}
 					}
-					p{
+
+					p {
 						font-size: 1.2rem;
 						line-height: 1.8;
+						@include bp($sm){
+							font-size: 1.3rem;
+						}
 
-						span{
+						span {
 							display: inline-block;
 							margin: 0;
 							padding: 3px 5px;
@@ -149,5 +195,4 @@
 			}
 		}
 	}
-
 }
