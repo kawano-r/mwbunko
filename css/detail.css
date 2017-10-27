@@ -1220,7 +1220,6 @@ a {
     justify-content: flex-end;
     max-width: 1000px;
     margin: 0 auto 20px; }
-<<<<<<< HEAD
     @media screen and (max-width: 1145px) {
       #detail-page .share-btn {
         -webkit-box-pack: center;
@@ -1228,8 +1227,6 @@ a {
         -ms-flex-pack: center;
         justify-content: center;
         margin: 10px auto 20px; } }
-=======
->>>>>>> 8a4f77c4d762c9e2a12426313ca72b46f0055062
     #detail-page .share-btn li {
       height: 20px;
       margin-left: 5px; }
@@ -1258,7 +1255,6 @@ a {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
-<<<<<<< HEAD
     justify-content: space-between;
     /* 下シェアボタン */ }
     @media screen and (max-width: 1145px) {
@@ -1283,15 +1279,6 @@ a {
         @media screen and (max-width: 1145px) {
           #detail-page .content-wrapper .main-contents h2 {
             margin: 15px auto; } }
-=======
-    justify-content: space-between; }
-    #detail-page .content-wrapper .main-contents {
-      font-size: 1.4rem;
-      width: 740px; }
-      #detail-page .content-wrapper .main-contents h2 {
-        font-size: 2.5rem;
-        margin-bottom: 30px; }
->>>>>>> 8a4f77c4d762c9e2a12426313ca72b46f0055062
       #detail-page .content-wrapper .main-contents .auther {
         font-weight: bold;
         margin-bottom: 30px; }
@@ -1306,12 +1293,9 @@ a {
         display: flex;
         font-size: 1.1rem;
         margin-bottom: 60px; }
-<<<<<<< HEAD
         @media screen and (max-width: 1145px) {
           #detail-page .content-wrapper .main-contents ul {
             display: none; } }
-=======
->>>>>>> 8a4f77c4d762c9e2a12426313ca72b46f0055062
         #detail-page .content-wrapper .main-contents ul li {
           margin-right: 5px;
           text-align: center;
@@ -1330,18 +1314,14 @@ a {
               background: #000; }
       #detail-page .content-wrapper .main-contents .main-image {
         float: left; }
-<<<<<<< HEAD
         @media screen and (max-width: 1145px) {
           #detail-page .content-wrapper .main-contents .main-image {
             float: none; } }
-=======
->>>>>>> 8a4f77c4d762c9e2a12426313ca72b46f0055062
         #detail-page .content-wrapper .main-contents .main-image img {
           display: block;
           width: 325px;
           margin-right: 40px;
           margin-bottom: 10px; }
-<<<<<<< HEAD
           @media screen and (max-width: 1145px) {
             #detail-page .content-wrapper .main-contents .main-image img {
               width: 260px;
@@ -1360,20 +1340,12 @@ a {
           #detail-page .content-wrapper .main-contents .summary {
             margin: 0 auto 30px;
             width: 97%; } }
-=======
-        #detail-page .content-wrapper .main-contents .main-image span {
-          display: block;
-          font-size: 1.1rem; }
-      #detail-page .content-wrapper .main-contents .summary {
-        margin-left: 365px; }
->>>>>>> 8a4f77c4d762c9e2a12426313ca72b46f0055062
         #detail-page .content-wrapper .main-contents .summary h3 {
           border-bottom: 3px solid #f1f3f6;
           line-height: 1.8; }
         #detail-page .content-wrapper .main-contents .summary p {
           line-height: 2;
           font-size: 1.35rem; }
-<<<<<<< HEAD
           @media screen and (max-width: 1145px) {
             #detail-page .content-wrapper .main-contents .summary p {
               line-height: 1.8;
@@ -1383,10 +1355,6 @@ a {
       @media screen and (max-width: 1145px) {
         #detail-page .content-wrapper .information {
           width: 100%; } }
-=======
-    #detail-page .content-wrapper .information {
-      width: 200px; }
->>>>>>> 8a4f77c4d762c9e2a12426313ca72b46f0055062
       #detail-page .content-wrapper .information .try {
         background: #ffca28;
         display: block;
@@ -1441,7 +1409,6 @@ a {
             margin-top: 5px;
             font-size: 1.2rem;
             letter-spacing: 1px; }
-<<<<<<< HEAD
     #detail-page .content-wrapper .share-btn {
       display: none; }
       @media screen and (max-width: 1145px) {
@@ -1451,8 +1418,6 @@ a {
           display: -ms-flexbox;
           display: flex;
           margin-top: 30px; } }
-=======
->>>>>>> 8a4f77c4d762c9e2a12426313ca72b46f0055062
   #detail-page .lineup {
     max-width: 1000px;
     margin: 0 auto 30px; }
@@ -1514,14 +1479,9 @@ a {
         #detail-page .lineup ul li div p {
           font-size: 1.2rem;
           line-height: 1.8; }
-<<<<<<< HEAD
           @media screen and (max-width: 625px) {
             #detail-page .lineup ul li div p {
               font-size: 1.3rem; } }
-=======
->>>>>>> 8a4f77c4d762c9e2a12426313ca72b46f0055062
-    #detail-page .lineup .lineup-slider .slick-slide {
-      margin-right: 40px; }
   #detail-page .more-search {
     margin-bottom: 20px; }
     #detail-page .more-search a {
